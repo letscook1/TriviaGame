@@ -4,7 +4,7 @@ $(document).ready(function() {
   $(".gameSpace").hide();
   $(".stats").hide();
 
-  var correct;
+  var right;
   var wrong;
   var answer;
   var counter;
@@ -171,7 +171,7 @@ $(document).ready(function() {
       questionTimer.stopTimer();
       $(".gameSpace").hide();
       $(".stats").show();
-      $(".right").html("Number right: " + correct);
+      $(".right").html("Number right: " + right);
       $(".wrong").html("Number Wrong: " + wrong);
       activeQuestion = false;
     }
@@ -179,10 +179,10 @@ $(document).ready(function() {
 
   function answerCheck() {
     if (answer == activeQuestion.answer && questionTimer.time > 0) {
-      correct++;
+      right++;
       questionTimer.reset(5);
       $(".answer").html(
-        "<h2>Correct! The answer is " + activeQuestion.answer + " </h2>"
+        "<h2>You are right! The answer is " + activeQuestion.answer + " </h2>"
       );
       setTimeout(game, 5000);
     }
@@ -242,7 +242,7 @@ $(document).ready(function() {
   function startGame() {
     $(".stats").hide();
 
-    correct = 0;
+    right = 0;
     wrong = 0;
     $(".gameSpace").show();
   }
